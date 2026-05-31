@@ -145,21 +145,29 @@ data/
 
 ## 5. 仓库结构
 
-本仓库主要文件结构如下：
+
+本仓库由核心复现代码、模型结构文件、训练辅助模块、可视化结果以及小组成员独立复现结果组成。核心代码主要用于 PSE-TAE 模型训练与推理；结果文件用于保存本项目的复现实验输出；组员复现文件夹用于展示不同成员在各自环境下对模型运行结果的验证。
 
 ```text
 .
-├── dataset.py              # 数据集读取与预处理
-├── train.py                # 模型训练与交叉验证
-├── inference.py            # 模型推理
-├── requirements.txt        # 项目依赖
-├── models/                 # PSE、TAE 和 PSE-TAE 模型结构
-├── learning/               # 训练、损失函数和评价指标相关工具
-├── preprocessing/          # 数据预处理脚本
-├── graphics/               # 模型结构图及可视化图像
-├── vis_resluts/            # 复现结果可视化图表
-├── .gitignore              # 忽略数据集、模型权重和训练输出等大文件
-└── README.md               # 项目说明文档
+├── README.md                 # 项目说明文档
+├── requirements.txt          # 项目依赖环境
+├── dataset.py                # 数据集读取与预处理
+├── train.py                  # 模型训练与 5 折交叉验证主程序
+├── inference.py              # 模型推理与预测结果输出脚本
+├── .gitignore                # Git 忽略规则
+├── LICENSE                   # 开源许可证
+│
+├── models/                   # PSE、TAE 和 PSE-TAE 模型结构代码
+├── learning/                 # 训练过程、损失函数、评价指标等辅助模块
+├── preprocessing/            # 数据预处理相关脚本
+├── graphics/                 # 模型结构图、README 插图及说明性图像
+├── vis_results/              # 训练曲线、测试指标等可视化结果图
+│
+├── result.zip                # 组长王少艺完成的主要复现实验结果压缩包
+├── 丁红俊复现/                # 组员丁红俊的复现结果与相关文件
+├── YJNEW/                    # 组员余娟的复现结果与相关文件
+└── yj                         # 余娟复现过程中的辅助文件或提交记录
 ```
 
 ---
