@@ -1,0 +1,21 @@
+project:
+  type: website
+  output-dir: _book
+
+website:
+  title: "基于像素集编码器的卫星影像时间序列分类"
+  navbar:
+    left:
+      - href: index.qmd
+        text: 首页
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    code-fold: false
+    number-sections: true
+
+render:
+  - index.qmd

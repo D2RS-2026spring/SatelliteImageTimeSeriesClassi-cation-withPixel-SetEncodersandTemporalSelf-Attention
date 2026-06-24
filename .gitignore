@@ -34,3 +34,7 @@ env/
 # IDE files
 .vscode/
 .idea/
+
+/.quarto/
+**/*.quarto_ipynb
+_book/

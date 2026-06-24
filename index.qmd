@@ -1,0 +1,87 @@
+---
+title: "基于像素集编码器的卫星影像时间序列分类"
+subtitle: "Satellite Image Time Series Classification with Pixel-Set Encoders and Temporal Self-Attention"
+format: html
+---
+
+> 📦 **源代码**: [GitHub 仓库](https://github.com/D2RS-2026spring/SatelliteImageTimeSeriesClassi-cation-withPixel-SetEncodersandTemporalSelf-Attention)
+
+# 项目概述
+
+本项目复现发表在 *CVPR 2020* 的论文：
+
+**Satellite Image Time Series Classification with Pixel-Set Encoders and Temporal Self-Attention**
+
+- 论文链接：https://doi.org/10.1109/CVPR42600.2020.01233
+- 原始代码仓库：https://github.com/VSainteuf/pytorch-psetae
+
+## 小组成员
+
+- 王少艺（2025303120175）
+- 余娟（2025303110117）
+- 丁红俊（2025303110115）
+
+# 模型架构
+
+## PSE-TAE 模型结构
+
+![PSE-TAE 架构图](graphics/PSETAE.png)
+
+模型主要包括三个部分：
+
+- **Pixel-Set Encoder (PSE)**：对每个地块内部的像素集合进行编码，提取空间维度上的统计与聚合特征
+- **Temporal Attention Encoder (TAE)**：基于自注意力机制建模多时相遥感观测之间的时间依赖关系
+- **MLP Classifier**：将时空特征映射到最终地物类别，实现多类别分类
+
+# 复现结果
+
+## 训练过程可视化
+
+### Fold 1 训练指标
+
+![Fold 1 训练指标](vis_resluts/fold1_training_metrics.png)
+
+### Fold 2 训练指标
+
+![Fold 2 训练指标](vis_resluts/fold2_training_metrics_horizontal.png)
+
+### Fold 3 训练指标
+
+![Fold 3 训练指标](vis_resluts/fold3_training_metrics_horizontal.png)
+
+### Fold 4 训练指标
+
+![Fold 4 训练指标](vis_resluts/fold4_training_metrics_horizontal.png)
+
+### Fold 5 训练指标
+
+![Fold 5 训练指标](vis_resluts/fold5_training_metrics_horizontal.png)
+
+# 代码说明
+
+## 主要脚本
+
+- `train.py` — 模型训练与验证
+- `inference.py` — 模型推理
+- `dataset.py` — 数据集处理
+
+## 环境配置
+
+项目使用 Python，需要安装以下依赖：
+
+- PyTorch
+- torchnet
+- scikit-learn
+- numpy
+- pandas
+- matplotlib
+
+# 数据说明
+
+项目面向 Sentinel-2 遥感影像数据集的多类别地物分类任务。
+
+# 结论
+
+1. 本项目成功复现了 PSE-TAE 模型的训练和推理流程
+2. 5 折交叉验证结果显示模型具有良好的稳定性和可复现性
+3. PSE-TAE 模型在遥感影像时空分类任务上表现优异
